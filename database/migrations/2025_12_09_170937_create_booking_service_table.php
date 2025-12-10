@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('booking_service', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('booking_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('service_id')->constrained()->cascadeOnDelete();
+            $table->integer('quantity')->default(1);
+            $table->decimal('unit_price', 12, 2);
+            $table->decimal('total_price', 12, 2);
+            $table->string('description');
             $table->timestamps();
         });
     }
