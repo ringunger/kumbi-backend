@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Api\V1\BusinessController;
 use App\Http\Controllers\Api\V1\UserController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /**
  * API Routes V1
@@ -13,8 +15,12 @@ Route::group([
     'namespace' => 'App\Http\Controllers\Api\V1',
 ], static function () {
 
+    Route::group(['name' => "Authenticated", 'middleware' => 'auth:sanctum'], static function () {
+        Route::get('/user', static function (Request $request) {
+            return $request->user();
+        })->middleware('auth:sanctum');
 
-    Route::group(['name' => "Authenticated", 'middleware' => 'auth:sanctum'], function () {
+
         Route::apiResource('users', UserController::class);
         Route::apiResource('businesses', BusinessController::class);
     });
