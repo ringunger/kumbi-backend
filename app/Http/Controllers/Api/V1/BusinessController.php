@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StorePaymentRequest;
-use App\Http\Requests\UpdatePaymentRequest;
-use App\Models\Payment;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBusinessRequest;
+use App\Http\Requests\UpdateBusinessRequest;
+use App\Models\Business;
 
-class PaymentController extends Controller
+class BusinessController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class PaymentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePaymentRequest $request)
+    public function store(StoreBusinessRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payment $payment)
+    public function show(Business $business)
     {
         //
     }
@@ -43,7 +44,7 @@ class PaymentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Payment $payment)
+    public function edit(Business $business)
     {
         //
     }
@@ -51,7 +52,7 @@ class PaymentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePaymentRequest $request, Payment $payment)
+    public function update(UpdateBusinessRequest $request, Business $business)
     {
         //
     }
@@ -59,7 +60,7 @@ class PaymentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Payment $payment)
+    public function destroy(Business $business)
     {
         //
     }
